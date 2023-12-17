@@ -1,0 +1,33 @@
+header{
+    background-color: rgb(170, 167, 167);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+table th{
+    background-color: blanchedalmond;
+    padding: 10px 20px;
+}
+
+table td{
+    background-color: azure;
+    padding: 10px 20px;
+}
+
+.notice{
+    background-color: yellow;
+    padding: 5px;
+}
+
+.all_day{
+    text-align: center;
+}
+
+.container{
+    width: max-content;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: rgb(227, 255, 186);
+}
