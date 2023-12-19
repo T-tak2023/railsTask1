@@ -1,17 +1,16 @@
-<header>
-    <p>スケジュール管理アプリ</p>
-</header>
+<%= render "shared/header" %>
 
-<main>
-    <h3>予定一覧</h3>
+<main class="w-75 m-auto">
+    <div class="d-flex justify-content-between mt-4 mb-2">
+        <h3>予定一覧</h3>
 
-    <% if flash[:notice] %>
-    <p class = "notice"><%= flash[:notice] %></p>
-    <% end %>
+        <% if flash[:notice] %>
+        <p class = "notice"><%= flash[:notice] %></p>
+        <% end %>
 
-    <p><%= link_to "新規追加", :new_plan , class: "btn btn-outline-primary" %>
-
-    <table>
+        <p><%= link_to "新規追加", :new_plan , class:"btn btn-outline-primary" %>
+    </div>
+    <table class="table table-striped text-center ">
     <thead>
         <tr>
         <th>id</th>
@@ -20,9 +19,9 @@
         <th>終了日</th>
         <th>終日</th>
         <th>更新日時</th>
-        <th>参照</th>
-        <th>編集</th>
-        <th>削除</th>
+        <th></th>
+        <th></th>
+        <th></th>
         </tr>
     </thead>
 
@@ -33,7 +32,7 @@
             <td><%= plan.title %></td>
             <td><%= plan.start_date.to_s(:date_jp)%></td>
             <td><%= plan.end_date.to_s(:date_jp) %></td>
-            <td class="all_day"><%= plan.all_day ? "○" : "" %></td>
+            <td ><%= plan.all_day ? "○" : "" %></td>
             <td><%= plan.updated_at.to_s(:datetime_jp) %></td>
             <td><%= link_to "詳細", plan %></td>
             <td><%= link_to "編集", [:edit, plan] %></td>
@@ -43,13 +42,13 @@
     </tbody>
     </table>
 
-    <div class="container">
-        <div>
+    <div class="d-flex justify-content-around mt-4 bg-light p-4">
+        <span>
             予定合計数 <%= "#{@plans.count}" %> 件
-        </div>
-        <div>
+        </span>
+        <span>
             本日の日付 <%= Date.today.to_s(:date_jp) %>
-        </div>
+        </span>
 
     </div>
 </main>
