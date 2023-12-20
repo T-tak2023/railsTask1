@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 
-<main class="w-75 m-auto">
-    <div class="d-flex justify-content-between mt-4 mb-2">
+<main class="mx-auto my-4" style="width: 500px;">
+    <div class="d-flex justify-content-between mb-1" >
         <h3>予定詳細</h3>
         <p><%= link_to "予定を編集する", [:edit,@plan] ,class:"btn btn-outline-primary" %></p>
     </div>
-    <table class= "table table-bordered text-center" style="width: 500px;">
+    <table class= "table table-bordered text-center">
         <tr>
         <th>タイトル</th>
         <td><%= @plan.title %></td>
