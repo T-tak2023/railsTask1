@@ -7,7 +7,7 @@ class Plan < ApplicationRecord
         def start_end_check
             return false if start_date.nil? || end_date.nil?           
             if self.start_date > self.end_date
-                errors.add(:end_date, "は開始日より前の日付で登録できません。") 
+                errors.add(:end_date, "は開始日より前の日付では登録できません。") 
             end          
         end  
 end
