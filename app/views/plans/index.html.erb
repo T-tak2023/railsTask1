@@ -42,12 +42,12 @@
     </tbody>
     </table>
 
-    <div class="d-flex justify-content-around mt-4 bg-light p-4">
+    <div class="d-flex align-items-center justify-content-evenly mt-4 bg-light" style="height:100px;">
         <span>
-            予定合計数 <%= "#{@plans.count}" %> 件
+            予定合計数 <span class="fs-5 mx-2"><%= "#{@plans.count}" %></span> 件
         </span>
         <span>
-            本日の日付 <%= Date.today.to_s(:date_jp) %>
+            本日の日付 <span class="mx-2"><%= Date.today.to_s(:date_jp) %></span>
         </span>
 
     </div>
