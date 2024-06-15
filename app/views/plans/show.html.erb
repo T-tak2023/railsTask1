@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+
+<main class="mx-auto my-4" style="width: 500px;">
+    <div class="d-flex justify-content-between mb-1" >
+        <h3>予定詳細</h3>
+        <p><%= link_to "編集する", [:edit,@plan] ,class:"btn btn-outline-primary" %></p>
+    </div>
+    <table class= "table table-bordered text-center">
+        <tr>
+        <th>タイトル</th>
+        <td><%= @plan.title %></td>
+        </tr>
+        <tr>
+        <th>開始日</th>
+        <td><%= @plan.start_date.to_s(:date_jp) %></td>
+        </tr>
+        <tr>
+        <th>終了日</th>
+        <td><%= @plan.end_date.to_s(:date_jp) %></td>
+        </tr>
+        <tr>
+        <th>終日</th>
+        <td><%= @plan.all_day ? "○": "" %></td>
+        </tr>
+        <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @plan.memo %></td>
+        </tr>
+    </table>
+    <div>
+        <%= link_to "予定一覧に戻る", :plans, class: "link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
+    </div>
+</main>
